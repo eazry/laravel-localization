@@ -28,9 +28,7 @@ class RouteTranslationsCacheCommand extends RouteCacheCommand
     public function handle()
     {
         $this->call('route:trans:clear');
-
         $this->cacheRoutesPerLocale();
-
         $this->info('Routes cached successfully for all locales!');
     }
 
@@ -59,7 +57,8 @@ class RouteTranslationsCacheCommand extends RouteCacheCommand
             }
 
             $this->files->put(
-                $this->makeLocaleRoutesPath($locale), $this->buildRouteCacheFile($routes)
+                $this->makeLocaleRoutesPath($locale),
+                $this->buildRouteCacheFile($routes)
             );
         }
     }
@@ -100,11 +99,11 @@ class RouteTranslationsCacheCommand extends RouteCacheCommand
         $stub = $this->files->get(
             realpath(
                 __DIR__
-                . DIRECTORY_SEPARATOR . '..'
-                . DIRECTORY_SEPARATOR . '..'
-                . DIRECTORY_SEPARATOR . '..'
-                . DIRECTORY_SEPARATOR . 'stubs'
-                . DIRECTORY_SEPARATOR . 'routes.stub'
+                    . DIRECTORY_SEPARATOR . '..'
+                    . DIRECTORY_SEPARATOR . '..'
+                    . DIRECTORY_SEPARATOR . '..'
+                    . DIRECTORY_SEPARATOR . 'stubs'
+                    . DIRECTORY_SEPARATOR . 'routes.stub'
             )
         );
 

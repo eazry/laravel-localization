@@ -30,7 +30,7 @@ class RouteTranslationsListCommand extends RouteListCommand
     {
         $locale = $this->argument('locale');
 
-        if ( ! $this->isSupportedLocale($locale)) {
+        if (!$this->isSupportedLocale($locale)) {
             $this->error("Unsupported locale: '{$locale}'.");
             return;
         }
