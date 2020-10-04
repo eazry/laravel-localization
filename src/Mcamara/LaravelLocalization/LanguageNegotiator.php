@@ -61,7 +61,7 @@ class LanguageNegotiator
             $this->use_intl = true;
 
             foreach ($supportedLanguages as $key => $supportedLanguage) {
-                if ( ! isset($supportedLanguage['lang'])) {
+                if (!isset($supportedLanguage['lang'])) {
                     $supportedLanguage['lang'] = Locale::canonicalize($key);
                 } else {
                     $supportedLanguage['lang'] = Locale::canonicalize($supportedLanguage['lang']);
@@ -111,8 +111,8 @@ class LanguageNegotiator
             }
 
             // Search for acceptable locale by 'regional' => 'af_ZA' or 'lang' => 'af-ZA' match.
-            foreach ( $this->supportedLanguages as $key_supported => $locale ) {
-                if ( (isset($locale['regional']) && $locale['regional'] == $key) || (isset($locale['lang']) && $locale['lang'] == $key) ) {
+            foreach ($this->supportedLanguages as $key_supported => $locale) {
+                if ((isset($locale['regional']) && $locale['regional'] == $key) || (isset($locale['lang']) && $locale['lang'] == $key)) {
                     return $key_supported;
                 }
             }

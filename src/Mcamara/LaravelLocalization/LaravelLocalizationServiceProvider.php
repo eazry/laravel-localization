@@ -3,6 +3,9 @@
 namespace Mcamara\LaravelLocalization;
 
 use Illuminate\Support\ServiceProvider;
+use Mcamara\LaravelLocalization\Commands\RouteTranslationsCacheCommand;
+use Mcamara\LaravelLocalization\Commands\RouteTranslationsClearCommand;
+use Mcamara\LaravelLocalization\Commands\RouteTranslationsListCommand;
 
 class LaravelLocalizationServiceProvider extends ServiceProvider
 {
@@ -14,7 +17,7 @@ class LaravelLocalizationServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../../config/config.php' => config_path('laravellocalization.php'),
+            __DIR__ . '/../../config/config.php' => config_path('laravellocalization.php'),
         ], 'config');
     }
 
@@ -35,10 +38,11 @@ class LaravelLocalizationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $packageConfigFile = __DIR__.'/../../config/config.php';
+        $packageConfigFile = __DIR__ . '/../../config/config.php';
 
         $this->mergeConfigFrom(
-            $packageConfigFile, 'laravellocalization'
+            $packageConfigFile,
+            'laravellocalization'
         );
 
         $this->registerBindings();
@@ -63,9 +67,9 @@ class LaravelLocalizationServiceProvider extends ServiceProvider
      */
     protected function registerCommands()
     {
-        $this->app->singleton('laravellocalizationroutecache.cache', Commands\RouteTranslationsCacheCommand::class);
-        $this->app->singleton('laravellocalizationroutecache.clear', Commands\RouteTranslationsClearCommand::class);
-        $this->app->singleton('laravellocalizationroutecache.list', Commands\RouteTranslationsListCommand::class);
+        $this->app->singleton('laravellocalizationroutecache.cache', RouteTranslationsCacheCommand::class);
+        $this->app->singleton('laravellocalizationroutecache.clear', RouteTranslationsClearCommand::class);
+        $this->app->singleton('laravellocalizationroutecache.list', RouteTranslationsListCommand::class);
 
         $this->commands([
             'laravellocalizationroutecache.cache',

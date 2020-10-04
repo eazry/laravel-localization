@@ -1,47 +1,50 @@
 {
-    "name": "mcamara/laravel-localization",
-    "description": "Easy localization for Laravel",
-    "keywords": ["localization", "laravel", "php"],
-    "homepage": "https://github.com/mcamara/laravel-localization",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Marc Cámara",
-            "email": "mcamara88@gmail.com",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^7.2",
-        "laravel/framework": "^6.0"
-    },
-    "require-dev": {
-        "orchestra/testbench-browser-kit": "~3.4|~3.8|~4.0",
-        "phpunit/phpunit": "6.0.*|8.0.*"
-    },
-    "suggest": {
-        "ext-intl": "*"
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit"
-    },
-    "autoload": {
-        "classmap": [
-        ],
-        "psr-0": {
-            "Mcamara\\LaravelLocalization": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Mcamara\\LaravelLocalization\\LaravelLocalizationServiceProvider"
-            ],
-            "aliases": {
-                "LaravelLocalization": "Mcamara\\LaravelLocalization\\Facades\\LaravelLocalization"
-            }
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "mcamara/laravel-localization",
+  "description": "Easy localization for Laravel",
+  "keywords": [
+    "localization",
+    "laravel",
+    "php"
+  ],
+  "homepage": "https://github.com/mcamara/laravel-localization",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marc Cámara",
+      "email": "mcamara88@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "laravel/framework": ">= 5.2"
+  },
+  "require-dev": {
+    "orchestra/testbench-browser-kit": "~3.4|~3.8|~4.0",
+    "phpunit/phpunit": ">= 6.0"
+  },
+  "suggest": {
+    "ext-intl": "*"
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "autoload": {
+    "classmap": [],
+    "psr-0": {
+      "Mcamara\\LaravelLocalization": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mcamara\\LaravelLocalization\\LaravelLocalizationServiceProvider"
+      ],
+      "aliases": {
+        "LaravelLocalization": "Mcamara\\LaravelLocalization\\Facades\\LaravelLocalization"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
